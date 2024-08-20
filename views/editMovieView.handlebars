@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <form method="post" action='/moviesAdmin/edit/{{data.id}}'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Title: </td>
+          <td><input type="text" name="title" required size="40" 
+                  value="{{data.title}}"></td>
+        </tr>
+        <tr>
+          <th>Director: </td>
+          <td><input type="text" name="director" required size="40" 
+                  value="{{data.director}}"></td>
+        </tr>
+        <input type="hidden" name="id" value="{{data.id}}">
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="Save" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>

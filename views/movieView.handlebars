@@ -1,0 +1,43 @@
+<div class="flexDiv">
+	<div class="movieListTable">
+		<table class="table">
+			{{#if data}}
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Director</th>
+					<th>Year</th>
+					<th>Rating</th>
+					<th>Reviews</th>
+				</tr>
+			</thead>
+			{{else}}
+			<tr><td colspan="3">No Movies found ... Add One!</td></tr>
+			{{/if}}
+			<tbody >
+					<tr>
+						<td>{{data.title}}</td>
+						<td>{{data.director}}</td>
+						<td>{{data.year}}</td>
+						<td>{{data.ratings}}</td>
+						<td>
+							{{#each data.reviews}}
+							<li class="'listItem">"{{this}}"</li>
+							{{/each}}
+						</td>
+
+						</td>
+						<td>
+							<a href="/movies/addRating/{{data.id}}">Add Rating</a> |
+							<a href="/movies/addReview/{{data.id}}">Add Review</a> 
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+		<div class="'homeButton">
+     <button onclick="redirectHome()">Home</button>
+    
+     <script src="/path/to/clickActions.js"></script>
+	</div>
+</div>

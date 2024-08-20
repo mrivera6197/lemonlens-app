@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <form method="post" action='/moviesAdmin/delete/{{data.id}}'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Title: </td>
+          <td>{{data.title}}</td>
+        </tr>
+        <tr>
+          <th>Director: </td>
+          <td>{{data.director}}</td>
+        </tr>
+        <input type="hidden" name="id" value="{{data.id}}">
+       
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="OK" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelDelete()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>

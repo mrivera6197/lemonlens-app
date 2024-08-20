@@ -1,0 +1,54 @@
+<div class="flexDiv">
+	<div class="adminContainer">
+	<form method="post" action='/movies/title'>
+		<label>Search Movies By Title</label>
+		<input type="text" name="title" required placeholder="Search"/>
+	</form>
+
+	<div class="movieListTable">
+		<h4 class="movieList">Movie List</h4>
+		<table class="table">
+			{{#if data}}
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Director</th>
+					<th>Year</th>
+					<th>Rating</th>
+					<th>Reviews</th>
+				</tr>
+			</thead>
+			{{else}}
+			<tr><td colspan="3">No Movies found ... Add One!</td></tr>
+			{{/if}}
+			<tbody >
+				{{#each data}}
+					<tr>
+						<td>{{this.title}}</td>
+						<td>{{this.director}}</td>
+						<td>{{this.year}}</td>
+						<td>{{this.ratings}}</td>
+						<td>
+							{{#each reviews}}
+							<li class="'listItem">"{{this}}"</li>
+							{{/each}}
+						</td>
+
+						</td>
+						<td>
+							<a href="/movies/addRating/{{this.id}}">Add Rating</a> |
+							<a href="/movies/addReview/{{this.id}}">Add Review</a> 
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="homeButton">
+     <button onclick="redirectHome()">Home</button>
+    
+     <script src="/path/to/clickActions.js"></script>
+	</div>
+
+	</div>
+</div>

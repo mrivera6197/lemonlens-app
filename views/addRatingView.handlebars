@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <form method="post" action='/movies/addRating/{{data.id}}'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Title: </td>
+          <td>{{data.title}}</td>
+        </tr>
+        <tr>
+          <th>Director: </td>
+          <td>{{data.director}}</td>
+        </tr>
+                <tr>
+          <th>Add Rating: </td>
+          <td><input type="text" name="rating" required size="40" 
+                  value="" placeholder="Enter rating 1-10">
+                 </td>
+        </tr>
+        <input type="hidden" name="id" value="{{data.id}}">
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="Save" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+      <div class="'homeButton">
+     <button onclick="redirectHome()">Home</button>
+    
+     <script src="/path/to/clickActions.js"></script>
+	</div>
+</div>

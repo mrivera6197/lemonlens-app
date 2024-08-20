@@ -1,0 +1,80 @@
+<div class="flexDiv">
+    <div class="adminContainer">
+        <div class="movieListTable">
+		<table class="table">
+			{{#if data}}
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Director</th>
+                    <th>Year</th>
+				</tr>
+			</thead>
+			{{else}}
+			<tr><td colspan="3">No Movies found ... Add One!</td></tr>
+			{{/if}}
+			<tbody >
+				{{#each data}}
+					<tr>
+						<td>{{this.title}}</td>
+						<td>{{this.director}}</td>
+                        <td>{{this.year}}</td>
+						</td>
+						<td>
+							<a href="/moviesAdmin/edit/{{this.id}}">Edit</a> | 
+							<a href="/moviesAdmin/delete/{{this.id}}">Delete</a> 
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+			<tfooter>
+				<tr><td>
+				<button class="btn btn-primary" 
+						onClick="addMovie();">Add Movie</button>
+				</td></tr>
+			</tfooter>
+		</table>
+	</div>
+    	<div class="movieListTable">
+		<table class="table table2">
+			{{#if userData}}
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Reviews</th>
+				</tr>
+			</thead>
+			{{else}}
+			<tr><td colspan="3">No Users found ... Add One!</td></tr>
+			{{/if}}
+			<tbody >
+				{{#each userData}}
+					<tr>
+						<td>{{this.username}}</td>
+						 <td>
+                            {{#if this.reviews}}
+                                <ul class="listItem">
+                                    {{#each this.reviews}}
+                                    <div class="flex">
+                                        <li>{{this.review}}</li>
+							            <a href="/reviews/delete/{{this._id}}">Delete</a> 
+                                    </div>
+                                    {{/each}}
+                                </ul>
+                            {{else}}
+                                No reviews
+                            {{/if}}
+                        </td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+    <div class="'homeButton">
+     <button onclick="redirectHome()">Home</button>
+    
+     <script src="/path/to/clickActions.js"></script>
+	</div>
+
+    </div>
+</div>
